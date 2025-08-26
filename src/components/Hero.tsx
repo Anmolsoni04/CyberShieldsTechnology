@@ -1,47 +1,104 @@
-import { ArrowRight, Shield, Lock, Eye, Zap } from 'lucide-react';
+import { ArrowRight, Star, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import profile1 from '@/assets/profile-1.jpg';
+import profile2 from '@/assets/profile-2.jpg';
+import profile3 from '@/assets/profile-3.jpg';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-hero">
-        <div className="absolute inset-0 mesh-gradient opacity-30"></div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-32 h-32 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-1/3 w-24 h-24 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      {/* Background pattern */}
+      <div 
+        className="absolute inset-0 opacity-5"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Social Links - Left Side */}
+      <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-6 z-20">
+        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          </svg>
+        </a>
+        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="flex justify-center mb-6 animate-fade-in">
-            <Badge variant="outline" className="px-4 py-2 border-primary/30 bg-primary/5">
-              <Shield className="w-4 h-4 mr-2 text-primary" />
-              Trusted by 5000+ Companies Worldwide
-            </Badge>
+          {/* Award Badge */}
+          <div className="flex justify-center mb-8 animate-fade-in">
+            <div className="flex items-center gap-3 px-4 py-2 bg-primary/10 rounded-full border border-primary/20">
+              <Trophy className="w-5 h-5 text-primary" />
+              <span className="text-sm font-medium">Awarded as the best Agency in 2024</span>
+              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
+            </div>
           </div>
 
-          {/* Main heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-            Protecting Your
-            <span className="block text-gradient mt-2">Digital Future</span>
-            With Advanced Security
+          {/* User Avatars */}
+          <div className="flex justify-center mb-8 animate-fade-in-up">
+            <div className="flex -space-x-4">
+              <img
+                src={profile1}
+                alt="User"
+                className="w-12 h-12 rounded-full border-2 border-background"
+              />
+              <img
+                src={profile2}
+                alt="User"
+                className="w-12 h-12 rounded-full border-2 border-background"
+              />
+              <img
+                src={profile3}
+                alt="User"
+                className="w-12 h-12 rounded-full border-2 border-background"
+              />
+            </div>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            Crafting Innovative
+            <br />
+            <span className="relative inline-block mt-2">
+              <span className="text-gradient">Digital</span>
+              <div className="absolute -right-20 top-0 w-16 h-16 rounded-full bg-secondary/20 flex items-center justify-center">
+                <img
+                  src={profile1}
+                  alt="Working"
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+              </div>
+            </span>
+            {' '}Solutions
+            <br />
+            For Your Business
           </h1>
 
           {/* Description */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            CybershieldsTechnologies delivers enterprise-grade cybersecurity solutions that protect your critical assets from evolving threats. Stay secure, stay ahead.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            Lorem ipsum dolor sit amet consectetur. Quis orci in tortor faucibus vitae justo arcu. Urna viverra sit ullamcorper nulla elit.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:shadow-glow hover:scale-105 transition-all duration-300 group"
+              className="bg-primary hover:bg-primary-dark group"
             >
               Get Started Now
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -49,46 +106,16 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary/30 hover:bg-primary/10 hover:border-primary"
+              className="border-foreground/20 hover:bg-foreground hover:text-background"
             >
-              Schedule Demo
+              Request Free Demo
             </Button>
           </div>
 
-          {/* Feature icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Lock className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-sm font-medium">End-to-End Encryption</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="p-3 bg-secondary/10 rounded-lg">
-                <Eye className="w-6 h-6 text-secondary" />
-              </div>
-              <span className="text-sm font-medium">24/7 Monitoring</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="p-3 bg-accent/10 rounded-lg">
-                <Zap className="w-6 h-6 text-accent" />
-              </div>
-              <span className="text-sm font-medium">Instant Response</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <span className="text-sm font-medium">AI Protection</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary/50 rounded-full mt-2"></div>
-          </div>
+          {/* Decorative elements */}
+          <div className="absolute top-20 right-10 w-20 h-20 bg-primary/10 rounded-full blur-2xl animate-float"></div>
+          <div className="absolute bottom-20 left-10 w-32 h-32 bg-secondary/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-40 left-1/4 w-16 h-16 bg-accent/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
       </div>
     </section>

@@ -1,61 +1,59 @@
-import { Shield, Lock, Globe, Cloud, Smartphone, Server, Eye, Zap } from 'lucide-react';
+import { Sparkles, Palette, Code, Megaphone, Video, Search } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const Services = () => {
   const services = [
     {
-      icon: Shield,
-      title: 'Advanced Threat Protection',
-      description: 'Real-time threat detection and prevention using AI-powered algorithms to keep your systems secure.',
+      icon: Sparkles,
+      title: 'UI/UX Design',
+      description: 'Creating intuitive and visually stunning user interfaces that delight your customers.',
       gradient: 'from-primary to-primary-light',
     },
     {
-      icon: Lock,
-      title: 'Data Encryption',
-      description: 'Military-grade encryption protocols to protect your sensitive data at rest and in transit.',
+      icon: Code,
+      title: 'Web Development',
+      description: 'Building responsive and high-performance websites using cutting-edge technologies.',
       gradient: 'from-secondary to-secondary-light',
     },
     {
-      icon: Globe,
-      title: 'Network Security',
-      description: 'Comprehensive network monitoring and firewall management to prevent unauthorized access.',
+      icon: Palette,
+      title: 'Brand Design',
+      description: 'Crafting unique brand identities that resonate with your target audience.',
       gradient: 'from-accent to-accent-light',
     },
     {
-      icon: Cloud,
-      title: 'Cloud Security',
-      description: 'Secure your cloud infrastructure with advanced security measures and compliance tools.',
+      icon: Megaphone,
+      title: 'Digital Marketing',
+      description: 'Strategic marketing campaigns that drive growth and increase your online presence.',
       gradient: 'from-primary-dark to-primary',
     },
     {
-      icon: Smartphone,
-      title: 'Mobile Security',
-      description: 'Protect your mobile devices and applications from malware and unauthorized access.',
+      icon: Video,
+      title: 'Video Production',
+      description: 'Professional video content that tells your story and engages your audience.',
       gradient: 'from-secondary-dark to-secondary',
     },
     {
-      icon: Server,
-      title: 'Infrastructure Protection',
-      description: 'Safeguard your IT infrastructure with comprehensive security solutions and monitoring.',
+      icon: Search,
+      title: 'SEO Optimization',
+      description: 'Improving your search rankings to drive organic traffic and visibility.',
       gradient: 'from-accent-dark to-accent',
     },
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-background to-muted/20">
+    <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="flex justify-center mb-4">
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Eye className="w-6 h-6 text-primary" />
-            </div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="text-gradient">Security Services</span>
+          <span className="text-primary font-medium text-sm uppercase tracking-wider">Our Services</span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-4">
+            We Provide The Best
+            <br />
+            <span className="text-gradient">Digital Services</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Comprehensive cybersecurity solutions designed to protect your business from evolving digital threats
+            We offer comprehensive digital solutions to help your business thrive in the modern world
           </p>
         </div>
 
@@ -66,14 +64,14 @@ const Services = () => {
             return (
               <Card
                 key={index}
-                className="group relative overflow-hidden border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+                className="group relative overflow-hidden border-border bg-card p-8 hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
               >
-                {/* Gradient overlay on hover */}
+                {/* Background gradient on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
                 
-                <div className="p-6 relative z-10">
+                <div className="relative z-10">
                   {/* Icon */}
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} p-3 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-full h-full text-white" />
                   </div>
 
@@ -83,32 +81,16 @@ const Services = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground">
                     {service.description}
                   </p>
-
-                  {/* Learn more link */}
-                  <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">
-                    <span>Learn more</span>
-                    <Zap className="w-4 h-4 ml-1 opacity-0 group-hover:opacity-100 transition-all" />
-                  </div>
                 </div>
 
-                {/* Bottom gradient line */}
+                {/* Hover effect line */}
                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
               </Card>
             );
           })}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Need a custom security solution?
-          </p>
-          <button className="px-6 py-3 bg-gradient-primary text-white font-medium rounded-lg hover:shadow-glow transition-all duration-300 hover:scale-105">
-            Contact Our Experts
-          </button>
         </div>
       </div>
     </section>
